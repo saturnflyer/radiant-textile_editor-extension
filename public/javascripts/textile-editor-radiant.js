@@ -6,6 +6,8 @@ filterObserver.prototype = {
     this.textarea = element;
     if ($('snippet_filter')) {
       this.select = $('snippet_filter');
+    } else if($('event_filter_id')) {
+      this.select = $('event_filter_id')
     } else {
       this.select = $(this.textarea.id.gsub('content', 'filter_id'));
     }
